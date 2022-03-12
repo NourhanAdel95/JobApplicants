@@ -1,0 +1,150 @@
+openapi: 3.0.1
+info:
+  title: Job Applicant
+  description: 'This is a sample of job applicant open api specification'
+  version: 1.0.0
+servers:
+- url: https://localhost:44320/api/ApplicantApi
+tags:
+- name: Applicant
+  description: Everything about Job Applicant
+  externalDocs:
+    description: Find out more
+    url: http://swagger.io
+paths:
+  /applicants:
+    get:
+      tags:
+      - Applicant
+      summary: get all applicants
+      responses:
+        400:
+          description: Bad Request
+          content: {}
+        404:
+          description: not found
+          content: {}
+        405:
+          description: Method Not Allowed
+          content: {}
+  /applicant/{id}:
+    get:
+      tags:
+      - Applicant
+      summary: get applicant detalis
+      parameters:
+      - name: id
+        in: path
+        description: ID of applicant
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        400:
+          description: Bad Request
+          content: {}
+        404:
+          description: not found
+          content: {}
+        405:
+          description: Method Not Allowed
+          content: {}
+  /add/applicant:        
+    post:
+      tags:
+      - Applicant
+      summary: Add a new job applicant
+      requestBody:
+        description: applicant object
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Applicant'
+        required: true
+      responses:
+        400:
+          description: Bad Request
+          content: {}
+        404:
+          description: not found
+          content: {}
+        405:
+          description: Method Not Allowed
+          content: {}
+  /update/applicant:
+    put:
+      tags:
+      - Applicant
+      summary: update an existing applicant
+      requestBody:
+        description: applicant object
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Applicant'
+        required: true
+      responses:
+        400:
+          description: Bad Request
+          content: {}
+        404:
+          description: not found
+          content: {}
+        405:
+          description: Method Not Allowed
+          content: {}
+  /delete/applicant/{id}:
+    delete:
+      tags:
+      - Applicant
+      summary: delete applicant 
+      parameters:
+      - name: id
+        in: path
+        description: ID of applicant
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        400:
+          description: Bad Request
+          content: {}
+        404:
+          description: not found
+          content: {}
+        405:
+          description: Method Not Allowed
+          content: {}
+  
+components:
+  schemas:
+    Applicant:
+      required:
+      - ID
+      - Name
+      - FamilyName
+      - Address
+      - CountryOfOrigin
+      - EMailAddress
+      - Age
+      - Hired
+      type: object
+      properties:
+        ID:
+          type: integer
+          format: int64
+        Name:
+          type: string
+        FamilyName:
+          type: string
+        Address:
+          type: string
+        EMailAddress:
+          type: string
+          example: test@test.com
+        Age:
+          type: integer
+        Hired:
+          type: boolean

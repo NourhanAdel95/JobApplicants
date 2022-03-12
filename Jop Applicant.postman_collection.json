@@ -1,0 +1,139 @@
+{
+	"info": {
+		"_postman_id": "64673ed1-b708-40ef-b563-b018d12b33e2",
+		"name": "Jop Applicant",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetAllapplicants",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44320/api/ApplicantApi/applicants",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44320",
+					"path": [
+						"api",
+						"ApplicantApi",
+						"applicants"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get applicant by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44320/api/ApplicantApi/applicant/3002",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44320",
+					"path": [
+						"api",
+						"ApplicantApi",
+						"applicant",
+						"3002"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Applicant",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \r\n        \"Name\": \"Nourhan11\",\r\n        \"FamilyName\": \"aaaaaaaaaaa\",\r\n        \"Address\": \"Gizaddhjgsdfd\",\r\n        \"CountryOfOrigin\": \"Egypt\",\r\n        \"EMailAddress\": \"nourhan11@gmail.com\",\r\n        \"Age\": 22,\r\n        \"Hired\": false\r\n    }"
+				},
+				"url": {
+					"raw": "https://localhost:44320/api/ApplicantApi/add/applicant",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44320",
+					"path": [
+						"api",
+						"ApplicantApi",
+						"add",
+						"applicant"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Applicant",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"ID\": 3002,\r\n        \"Name\": \"Alaaaaaa\",\r\n        \"FamilyName\": \"nnnn njjjj\",\r\n        \"Address\": \"bnbhhddddddddddddddddd\",\r\n        \"CountryOfOrigin\": null,\r\n        \"EMailAddress\": \"ff@ff.com\",\r\n        \"Age\": 40,\r\n        \"Hired\": true\r\n    }"
+				},
+				"url": {
+					"raw": "https://localhost:44320/api/ApplicantApi/update/applicant",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44320",
+					"path": [
+						"api",
+						"ApplicantApi",
+						"update",
+						"applicant"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Applicant",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44320/api/ApplicantApi/delete/applicant/3002",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44320",
+					"path": [
+						"api",
+						"ApplicantApi",
+						"delete",
+						"applicant",
+						"3002"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
